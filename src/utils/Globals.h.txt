@@ -1,0 +1,9 @@
+#pragma once
+
+/* types for global vars */
+#include <Client.h>
+
+/* global vars */
+extern Client client;
+extern int firstGlobal;
+extern bool secondGlobal;
