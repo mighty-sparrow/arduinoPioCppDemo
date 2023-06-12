@@ -2,12 +2,11 @@
 #include <Arduino.h>
 #include <./Globals.h>
 
-class ExampleClass{
+class AnotherClass{
     public:
-        ExampleClass();
         void someFunction(int pParamVar);
         String printInternalVar();
-        void setGlobalVariable();
+        int readGlobalVariable();
     private:
         int _pInternalVar;
 };
