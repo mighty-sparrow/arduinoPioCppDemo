@@ -1,12 +1,15 @@
 #include <Arduino.h>
-#include <./Globals.h>
-#include <./utils/ExampleClass.h>
-#include <./utils/AnotherClass.h>
+#include <./utils/Globals.h>
+#include <./demos/customClassesDemo/ExampleClass.h>
+#include <./demos/customClassesDemo/AnotherClass.h>
+#include <./demos/serialInputDemo/SerialInput.h>
 
 // Declaration of our `ExampleClass` instance.
 ExampleClass myExample;
 // Declaration of our `AnotherClass` instance.
 AnotherClass anotherClass;
+// Declaration of our `SerialInput` instance.
+SerialInput sInput;
 
 /**
  * @brief Declaration of our global variable. This is the
@@ -31,52 +34,96 @@ void printGlobals();
 void printInternals();
 
 void setup() {
-  /**
-   * @brief Wait a couple seconds, just to give you a chance
-   * to open the Serial monitor.
-   */
-  delay(2000);
+  #pragma region OOP Demo
 
   /**
-   * @brief Setting a value for the global variable `firstGlobal`
-   * defined in this file, but referenced in `Globals.h`.
+   * @brief Uncomment the lines within this `region`
+   * to run the Custom Classes demo code.
+   * 
+   * Be sure to comment the lines not necessary for this
+   * demo to run.
    */
-  firstGlobal = 696969;
+  // /**
+  //  * @brief Wait a couple seconds, just to give you a chance
+  //  * to open the Serial monitor.
+  //  */
+  // delay(2000);
 
-  /**
-   * @brief Calling `someFunction` and set the value of the
-   * `_pInternalVar` to `96`.
-   */
-  myExample.setInternalVar("'First Value'");
-  /**
-   * @brief Calling `anotherSetterMethod` and set the value of the
-   * `_pInternalVar` to `42`.
-   */
-  anotherClass.anotherSetterMethod("'Second value'");
+  // /**
+  //  * @brief Setting a value for the global variable `firstGlobal`
+  //  * defined in this file, but referenced in `Globals.h`.
+  //  */
+  // firstGlobal = 696969;
+
+  // /**
+  //  * @brief Calling `someFunction` and set the value of the
+  //  * `_pInternalVar` to `96`.
+  //  */
+  // myExample.setInternalVar("'First Value'");
+  // /**
+  //  * @brief Calling `anotherSetterMethod` and set the value of the
+  //  * `_pInternalVar` to `42`.
+  //  */
+  // anotherClass.anotherSetterMethod("'Second value'");
+  #pragma endregion
 
   // Begin communicating Serially with a baud rate of 9600
   Serial.begin(9600);
 
-  // Starting out by printing a new line with 'Global' to be followed by the initial 
-  Serial.println();
-  Serial.print("INITIAL ");
-  printGlobals();
+  #pragma region OOP Demo
+  /**
+   * @brief Uncomment the lines within this `region`
+   * to run the Custom Classes demo code.
+   * 
+   * Be sure to comment the lines not necessary for this
+   * demo to run.
+   */
+  // // Starting out by printing a new line with 'Global' to be followed by the initial 
+  // Serial.println();
+  // Serial.print("INITIAL ");
+  // printGlobals();
 
-  // Change the value of a global variable.
-  myExample.setGlobalVariable(101);
+  // // Change the value of a global variable.
+  // myExample.setGlobalVariable(101);
+  #pragma endregion
+
 }
 
 void loop() {
-  Serial.println("------------");
+  #pragma region OOP Demo
 
-  // Call the function to print internal variables.
-  printInternals();
+  /**
+   * @brief Uncomment the lines within this `region`
+   * to run the Custom Classes demo code.
+   * 
+   * Be sure to comment the lines not necessary for this
+   * demo to run.
+   */
+  // Serial.println("------------");
 
-  // Call the function to print global variables.
-  printGlobals();
+  // // Call the function to print internal variables.
+  // printInternals();
 
-  // Waiting for one second before looping around again.
-  delay(1000);
+  // // Call the function to print global variables.
+  // printGlobals();
+
+  // // Waiting for one second before looping around again.
+  // delay(1000);
+
+#pragma endregion
+
+  #pragma region Serial Input Demo
+  /**
+   * @brief Uncomment the lines within this `region`
+   * to run the Serial Input demo code.
+   * 
+   * Be sure to comment the lines not necessary for this
+   * demo to run.
+   */
+  sInput.recvWithStartEndMarkers();
+  sInput.showNewData();
+  
+  #pragma endregion
 }
 
 /**

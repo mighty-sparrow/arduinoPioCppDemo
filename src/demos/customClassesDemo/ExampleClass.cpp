@@ -1,4 +1,4 @@
-#include <./utils/ExampleClass.h>
+#include <./demos/customClassesDemo/ExampleClass.h>
 
 void ExampleClass::setInternalVar(String pParamVar){
     _pInternalVar = pParamVar;
