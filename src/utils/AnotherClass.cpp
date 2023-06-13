@@ -1,13 +1,17 @@
 #include <./utils/AnotherClass.h>
 
-void AnotherClass::someFunction(int pParamVar){
+void AnotherClass::anotherSetterMethod(String pParamVar){
     _pInternalVar = pParamVar;
 }
 
-String AnotherClass::printInternalVar(){
-    return ("Internal Value Is: " + _pInternalVar);
+String AnotherClass::getAnotherInternalVar(){
+    return _pInternalVar;
 }
 
-int AnotherClass::readGlobalVariable(){
+void AnotherClass::setAnotherGlobalVariable(int pNewGlobal){
+    firstGlobal = pNewGlobal;
+}
+
+int AnotherClass::readAnotherGlobalVariable(){
     return firstGlobal;
 }

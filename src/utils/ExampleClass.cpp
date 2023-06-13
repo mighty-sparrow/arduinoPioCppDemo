@@ -1,16 +1,17 @@
 #include <./utils/ExampleClass.h>
 
-ExampleClass::ExampleClass(){
-}
-
-void ExampleClass::someFunction(int pParamVar){
+void ExampleClass::setInternalVar(String pParamVar){
     _pInternalVar = pParamVar;
 }
 
-String ExampleClass::printInternalVar(){
-    return ("Internal Value Is: " + _pInternalVar);
+String ExampleClass::getInternalVar(){
+    return _pInternalVar;
 }
 
-void ExampleClass::setGlobalVariable(){
-    firstGlobal = 69;
+void ExampleClass::setGlobalVariable(int pNewGlobal){
+    firstGlobal = pNewGlobal;
+}
+
+int ExampleClass::readGlobalVariable(){
+    return firstGlobal;
 }
